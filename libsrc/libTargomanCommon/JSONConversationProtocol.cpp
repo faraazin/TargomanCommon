@@ -332,6 +332,7 @@ QString JSONConversationProtocol::variant2Json(const QVariant& _var)
         return "\"" + _var.toString().replace("\"", "\\\"").replace("\n","\\n") + "\"";
 
     case QVariant::List:
+    case QVariant::StringList:
         return variantList2JSONArray(_var.toList());
 
     case QVariant::Map:
