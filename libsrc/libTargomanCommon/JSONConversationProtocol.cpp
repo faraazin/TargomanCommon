@@ -63,7 +63,7 @@ QString JSONConversationProtocol::variantList2JSONArray(const QVariantList& _lis
     {
         if (ListIter->type() == QVariant::Map)
             JSONArray += variantMap2JSONObject(ListIter->toMap());
-        if (ListIter->type() == QVariant::List)
+        else if (ListIter->type() == QVariant::List)
             JSONArray += variantList2JSONArray(ListIter->toList());
         else
             JSONArray += variant2Json(*ListIter);
